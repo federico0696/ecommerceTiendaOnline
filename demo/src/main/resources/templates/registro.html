@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>PROYECTO tienda de ropa online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/registro.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/img/logo.png}" alt="Logo" />
+            </a>
+        </div>
+        <div class="registro-inicioSesion" th:if="${session.usuariosession == null}">
+            <a href="/login" role="button">¡Inicia sesión!</a>
+        </div>
+    </header>
+
+    <div class="formulario">
+        <div class="envoltorio">
+            <!-- <div th:if="${param.error}" class="mensajeError">
+                <h5>Error!</h5>
+                <p>Credenciales incorrectas, por favor intenta nuevamente.</p>
+            </div> -->
+            <div th:if="${error} != null" class="mensajeError">
+                <div>
+                    <h5>Error!</h5>
+                    <p th:text="${error}"></p>
+                </div>
+            </div>
+
+            <form th:action="@{/registro}" method="POST" enctype="multipart/form-data">
+                <h2>Registrate!</h2>
+                <div class="input-box">
+                    <label for="email">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Ingrese su Nombre" th:value="${nombre}" required>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Ingrese su Email" th:value="${email}" required>
+                </div>
+                <div class="input-box">
+                    <label for="imagen">Imagen de perfil</label>
+                    <input type="file" name="imagen" placeholder="imagen">
+                </div>
+                <div class="input-box">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <div class="input-box">
+                    <label for="password">Repita la Contraseña</label>
+                    <input type="password" name="password2" placeholder="Repetir Contraseña" required>
+                </div>
+                <button type="submit" class="btn">Registrarme</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

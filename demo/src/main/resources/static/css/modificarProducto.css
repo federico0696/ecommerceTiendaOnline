@@ -1,0 +1,334 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url('../img/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.operaciones-de-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 320px;
+}
+
+.operaciones-de-administrador a{
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.menu-horizontal li {
+    position: relative;
+    display: inline-block; /* Esto alinea el elemento del menú principal en una sola fila */
+}
+
+/* Estilo para el enlace principal */
+.menu-horizontal > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Cambia según tu preferencia */
+    background-color: #777; 
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú desplegable (vertical) */
+.menu-vertical {
+    display: none; /* Ocultamos el menú vertical por defecto */
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 100%; /* Posiciona el menú justo debajo del enlace */
+    width: 306px;
+}
+
+.menu-vertical li {
+    width: 100%; /* Aseguramos que los elementos del menú vertical ocupen todo el ancho */
+}
+
+.menu-vertical li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: white; /* Fondo del menú desplegable */
+}
+
+/* Efecto hover para el menú vertical */
+.menu-vertical li a:hover {
+    background-color: #555; /* Cambia el fondo cuando pasas el ratón */
+    color: white;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por el menú principal */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Efecto hover para el enlace principal */
+.menu-horizontal > li > a:hover {
+    background-color: #555; /* Cambia el fondo al hacer hover en el menú principal */
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.mensajeExito {
+    background-color: rgba(9, 255, 0, 0.4);
+    border: 1px solid rgb(9, 255, 0);
+    padding: 15px;
+    width: 300px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px; /* Ajusta el tamaño según tus necesidades */
+    transition: color 0.3s;
+}
+
+.cerrar:hover {
+    color: rgba(255, 0, 0, 0.7); /* Color al pasar el mouse */
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 35px;
+    background-color: #333;
+    margin: 60px 0px 0px 0px;
+}
+
+.navbar a{
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+}
+
+.navbar a:hover{
+    background-color: #666;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+.titulo-principal {
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: #333;
+    margin: 60px 0px 0px 0px;
+}
+
+.titulo-principal a{
+    color: white;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+main {
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.producto-completo {
+    border: 1px solid rgba(255, 255, 255, .2);
+    width: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.producto-completo:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.producto-imagen {
+    height: 200px;
+    overflow: hidden;
+}
+
+.producto-imagen img{
+    transition: all 0.7s;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-imagen:hover img{
+    transform: scale(1.1);
+}
+
+.producto-detalles {
+    display: flex;
+    flex-direction: column;
+    color: #ececec;
+    background: linear-gradient(to right, #191654, #43c6ac);
+    background-size: 200% 100%; 
+    gap: 5px;
+    border-radius: 10px;
+    margin-top: -10px;
+    position: relative;
+    text-align: center;
+}
+
+.producto-detalles h4{
+    margin: 10px 10px 10px 10px;
+}
+
+.producto-precio{
+    padding: 5px;
+    background-color: #333;
+}
+
+.producto-precio span{
+    color: #28a745; /* Un verde similar al dólar */
+    font-weight: bold;
+}
+
+.producto-agregar {
+    display: inline-block; /* Para que el <a> se comporte como un botón */
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    color: inherit; /* Hereda el color de texto */
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente por defecto */
+    border: 0;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid #ececec;
+    transition: background-color .4s, color .4s;
+    text-align: center; /* Centra el texto dentro del <a> */
+    margin: 0px 10px 10px 10px;
+}
+
+.producto-agregar:hover {
+    background-color: #191654;
+    color: #ececec;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra el formulario horizontalmente */
+    margin: 20px 0px 20px 0px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilos del formulario de búsqueda */
+.search-form {
+    display: flex;
+    align-items: center; /* Centra verticalmente el input y el botón */
+    width: 280px;
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo del formulario */
+}
+
+/* Estilos del campo de entrada */
+.search-input {
+    flex: 1; /* Toma el máximo espacio disponible */
+    border: none; /* Sin borde en el campo de entrada */
+    padding: 5px; /* Espacio interior */
+    border-radius: 5px 0 0 5px; /* Bordes redondeados solo en el lado izquierdo */
+    font-size: 16px; /* Tamaño del texto */
+    outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+/* Estilos del botón de búsqueda */
+.search-button {
+    background-color: #007bff; /* Fondo del botón */
+    border: none; /* Sin borde en el botón */
+    color: white; /* Color del texto */
+    padding: 5px 7.5px; /* Espacio interior */
+    border-radius: 0 5px 5px 0; /* Bordes redondeados solo en el lado derecho */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.search-button:hover {
+    background-color: #0056b3; /* Fondo más oscuro al pasar el ratón */
+}

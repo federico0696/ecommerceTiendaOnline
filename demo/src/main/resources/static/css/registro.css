@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    gap: 30px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+/* ------------------------------------------------------------------------------------------------------ */
+
+.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.envoltorio {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 450px;
+    background: #555;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.envoltorio h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.input-box input::placeholder {
+    color: #333;
+}
+
+.input-box select {
+    color: #000;
+    background: #fff;
+}
+
+.input-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.envoltorio .btn {
+    width: 100%;
+    height: 45px;
+    background: #777;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 25px;
+}
+
+.envoltorio .btn:hover {
+    background: #333;
+}
+
+.mensajeError {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #f00;
+    padding: 15px;
+    color: #f00;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
+
+
+

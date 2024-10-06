@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.operaciones-de-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 320px;
+}
+
+.operaciones-de-administrador a{
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.menu-horizontal li {
+    position: relative;
+    display: inline-block; /* Esto alinea el elemento del menú principal en una sola fila */
+}
+
+/* Estilo para el enlace principal */
+.menu-horizontal > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Cambia según tu preferencia */
+    background-color: #777; 
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú desplegable (vertical) */
+.menu-vertical {
+    display: none; /* Ocultamos el menú vertical por defecto */
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 100%; /* Posiciona el menú justo debajo del enlace */
+    width: 306px;
+}
+
+.menu-vertical li {
+    width: 100%; /* Aseguramos que los elementos del menú vertical ocupen todo el ancho */
+}
+
+.menu-vertical li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: white; /* Fondo del menú desplegable */
+}
+
+/* Efecto hover para el menú vertical */
+.menu-vertical li a:hover {
+    background-color: #555; /* Cambia el fondo cuando pasas el ratón */
+    color: white;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por el menú principal */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Efecto hover para el enlace principal */
+.menu-horizontal > li > a:hover {
+    background-color: #555; /* Cambia el fondo al hacer hover en el menú principal */
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    gap: 30px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+.titulo-principal {
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: #333;
+    margin: 60px 0px 0px 0px;
+}
+
+.container {
+    margin: 15px 10% 0px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.articulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+    border: 1px rgba(0, 0, 0, 0.342) solid;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, .4);
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.input-box {
+    text-align: center;
+}
+
+.input-box input{
+    width: 35px;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(167, 205, 238);
+    border: 1px rgba(0, 0, 0, 0.342) solid;
+    margin: 1%;
+    height: 80px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, .4);
+    align-self: flex-end; /* Mueve el contenedor hacia la izquierda */
+}
+
+.bi-trash {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+p{
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columna */
+    align-items: center; /* Centrarlos horizontalmente */
+    justify-content: center; /* Centrarlos verticalmente (si es necesario) */
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.producto-agregar {
+    display: inline-block; /* Para que el <a> se comporte como un botón */
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    color: inherit; /* Hereda el color de texto */
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente por defecto */
+    border: 0;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid #ececec;
+    transition: background-color .4s, color .4s;
+    text-align: center; /* Centra el texto dentro del <a> */
+}
+
+.producto-agregar:hover {
+    background-color: #191654;
+    color: #ececec;
+}
+
+.mensaje {
+    background-color: rgba(0, 123, 255, 0.7); /* Color de fondo */
+    color: white;
+    margin: 10px 400px 0px 400px ;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold; 
+    font-size: 1.2em; 
+}
+
+.seguirComprando {
+    margin: 20px 0;
+}
+
+.seguirComprando a {
+    display: inline-block;
+    background-color: #28a745; /* Color de fondo verde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Quitar subrayado */
+    font-size: 16px; /* Tamaño de letra */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.seguirComprando a:hover {
+    background-color: #218838; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.seguirComprando a i {
+    margin-left: 8px; /* Espacio entre el texto y el ícono */
+    font-size: 18px; /* Ajuste de tamaño del ícono */
+    vertical-align: middle; /* Alineación del ícono */
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* Carrito de compras */
+
+
+.carrito-boton {
+    display: inline-block;
+    position: relative;
+    font-size: 22px; /* Aumenta el tamaño del icono */
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s;
+    
+}
+
+.carrito-boton:hover {
+    transform: scale(1.4);
+}
+
+.carrito-numero {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50%; /* Para hacerlo redondo */
+    min-width: 20px; /* Asegura un ancho mínimo */
+    min-height: 20px; /* Asegura un alto mínimo */
+    padding: 2px; /* Añade algo de espacio interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+

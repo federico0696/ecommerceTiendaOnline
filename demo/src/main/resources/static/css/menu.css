@@ -1,0 +1,533 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.operaciones-de-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 320px;
+}
+
+.operaciones-de-administrador a{
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.menu-horizontal li {
+    position: relative;
+    display: inline-block; /* Esto alinea el elemento del menú principal en una sola fila */
+}
+
+/* Estilo para el enlace principal */
+.menu-horizontal > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Cambia según tu preferencia */
+    background-color: #777; 
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú desplegable (vertical) */
+.menu-vertical {
+    display: none; /* Ocultamos el menú vertical por defecto */
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 100%; /* Posiciona el menú justo debajo del enlace */
+    width: 306px;
+}
+
+.menu-vertical li {
+    width: 100%; /* Aseguramos que los elementos del menú vertical ocupen todo el ancho */
+}
+
+.menu-vertical li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: white; /* Fondo del menú desplegable */
+}
+
+/* Efecto hover para el menú vertical */
+.menu-vertical li a:hover {
+    background-color: #555; /* Cambia el fondo cuando pasas el ratón */
+    color: white;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por el menú principal */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Efecto hover para el enlace principal */
+.menu-horizontal > li > a:hover {
+    background-color: #555; /* Cambia el fondo al hacer hover en el menú principal */
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    gap: 30px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.mensajeExito {
+    background-color: rgba(9, 255, 0, 0.4);
+    border: 1px solid rgb(9, 255, 0);
+    padding: 15px;
+    width: 300px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px; /* Ajusta el tamaño según tus necesidades */
+    transition: color 0.3s;
+}
+
+.cerrar:hover {
+    color: rgba(255, 0, 0, 0.7); /* Color al pasar el mouse */
+}
+
+.mensajeCarrito {
+    background-color: #333333c7; /* Color de fondo */
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 36%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar */
+    z-index: 10; 
+    font-weight: bold; 
+    font-size: 16px; 
+}
+
+.mensajeCarrito2 {
+    background-color: #333333c7; /* Color de fondo */
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 43%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar */
+    z-index: 10; 
+    font-weight: bold; 
+    font-size: 16px; 
+}
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* Corousel */
+
+.carousel{
+    display: flex;
+    justify-content:center;
+    margin-top: 60px;
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.superContenedor{
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.contenedor{
+    border: 1px solid rgba(255, 255, 255, .2);
+    min-width: 200px;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.contenedor:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    color: #ececec;
+    background: linear-gradient(to right, #555, #999);
+    /* background-size: 200% 100%;  */
+    gap: 5px;
+    border-radius: 10px;
+    margin-top: -10px;
+    position: relative;
+    text-align: center;
+}
+
+.detalles h4{
+    font-weight: 400;
+    font-family: cursive;
+    text-transform: capitalize;
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centrar verticalmente */
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+    user-select: none;
+    z-index: 10; /* Asegurarse de que las flechas estén por encima de otros elementos */
+}
+
+.btn-left {
+    left: 2%;
+}
+
+.btn-right {
+    right: 2%;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    color: #333;
+    font-size: 2rem;
+    transform: translateY(-50%) scale(1.2); /* Aumentar el tamaño al hacer hover */
+}
+/* ------------------------------------------------------------------------------------------------------ */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+    background-color: #333;
+    margin: 60px 0px 0px 0px;
+}
+
+.navbar a{
+    color: white;
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+}
+
+.navbar a:hover{
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.navbar .seleccionado{
+    background-color: #666;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+.titulo-principal {
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: #333;
+    margin: 60px 0px 0px 0px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+main {
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.producto-completo {
+    border: 1px solid rgba(255, 255, 255, .2);
+    width: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.producto-completo:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.producto-imagen {
+    height: 200px;
+    overflow: hidden;
+}
+
+.producto-imagen img{
+    transition: all 0.7s;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-imagen:hover img{
+    transform: scale(1.1);
+}
+
+.producto-detalles {
+    display: flex;
+    flex-direction: column;
+    color: #ececec;
+    background: linear-gradient(to right, #555, #999);
+    background-size: 200% 100%; 
+    gap: 5px;
+    border-radius: 10px;
+    margin-top: -10px;
+    position: relative;
+    text-align: center;
+}
+
+.producto-detalles h4{
+    font-family: cursive;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.producto-precio{
+    padding: 5px;
+    background: linear-gradient(to right, #999, #555);
+}
+
+.producto-precio span{
+    color: white; /* Un verde similar al dólar */
+    font-weight: bold;
+}
+
+.producto-agregar {
+    display: inline-block; /* Para que el <a> se comporte como un botón */
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    color: inherit; /* Hereda el color de texto */
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente por defecto */
+    border: 0;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid #ececec;
+    transition: background-color .4s, color .4s;
+    text-align: center; /* Centra el texto dentro del <a> */
+    margin: 0px 10px 10px 10px;
+    font-weight: 400;
+    font-family: cursive;
+}
+
+.producto-agregar:hover {
+    background-color: #333;
+    color: #ececec;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* lupa buscador */
+
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra el formulario horizontalmente */
+    margin: 20px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilos del formulario de búsqueda */
+.search-form {
+    display: flex;
+    align-items: center; /* Centra verticalmente el input y el botón */
+    width: 280px;
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo del formulario */
+}
+
+/* Estilos del campo de entrada */
+.search-input {
+    flex: 1; /* Toma el máximo espacio disponible */
+    border: none; /* Sin borde en el campo de entrada */
+    padding: 5px; /* Espacio interior */
+    border-radius: 5px 0 0 5px; /* Bordes redondeados solo en el lado izquierdo */
+    font-size: 16px; /* Tamaño del texto */
+    outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+/* Estilos del botón de búsqueda */
+.search-button {
+    background-color: #555; /* Fondo del botón */
+    border: none; /* Sin borde en el botón */
+    color: white; /* Color del texto */
+    padding: 5px 7.5px; /* Espacio interior */
+    border-radius: 0 5px 5px 0; /* Bordes redondeados solo en el lado derecho */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.search-button:hover {
+    background-color: #333; /* Fondo más oscuro al pasar el ratón */
+}
+
+/* ------------------------------------------------------------------ */
+/* Selector Menu */
+
+
+/* Estilos para el formulario de selección de temporada */
+.season-form {
+    display: flex;
+    margin: 20px; /* Espacio alrededor del formulario */
+}
+
+/* Estilos para el campo de selección */
+.season-select {
+    border: 1px solid #ccc; /* Borde del campo de selección */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px; /* Espacio interior */
+    font-size: 16px; /* Tamaño del texto */
+    outline: none; /* Quita el borde de enfoque predeterminado */
+    background-color: #f9f9f9; /* Fondo del campo de selección */
+    cursor: pointer; /* Cambia el cursor a mano cuando se pasa sobre el campo */
+    width: 240px; /* Ancho del campo de selección */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del campo */
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves para el color de fondo y el borde */
+}
+
+/* Estilos para el campo de selección cuando se enfoca */
+.season-select:focus {
+    border-color: #007bff; /* Color del borde cuando el campo está enfocado */
+    background-color: #fff; /* Fondo blanco cuando el campo está enfocado */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Sombra más visible cuando el campo está enfocado */
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* Carrito de compras */
+
+
+.carrito-boton {
+    display: inline-block;
+    position: relative;
+    font-size: 22px; /* Aumenta el tamaño del icono */
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s;
+    
+}
+
+.carrito-boton:hover {
+    transform: scale(1.4);
+}
+
+.carrito-numero {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50%; /* Para hacerlo redondo */
+    min-width: 20px; /* Asegura un ancho mínimo */
+    min-height: 20px; /* Asegura un alto mínimo */
+    padding: 2px; /* Añade algo de espacio interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+
+
+

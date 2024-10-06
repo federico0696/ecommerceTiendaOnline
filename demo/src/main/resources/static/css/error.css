@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.operaciones-de-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 320px;
+}
+
+.operaciones-de-administrador a{
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.menu-horizontal li {
+    position: relative;
+    display: inline-block; /* Esto alinea el elemento del menú principal en una sola fila */
+}
+
+/* Estilo para el enlace principal */
+.menu-horizontal > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Cambia según tu preferencia */
+    background-color: #777; 
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú desplegable (vertical) */
+.menu-vertical {
+    display: none; /* Ocultamos el menú vertical por defecto */
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 100%; /* Posiciona el menú justo debajo del enlace */
+    width: 306px;
+}
+
+.menu-vertical li {
+    width: 100%; /* Aseguramos que los elementos del menú vertical ocupen todo el ancho */
+}
+
+.menu-vertical li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: white; /* Fondo del menú desplegable */
+}
+
+/* Efecto hover para el menú vertical */
+.menu-vertical li a:hover {
+    background-color: #555; /* Cambia el fondo cuando pasas el ratón */
+    color: white;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por el menú principal */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Efecto hover para el enlace principal */
+.menu-horizontal > li > a:hover {
+    background-color: #555; /* Cambia el fondo al hacer hover en el menú principal */
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    gap: 30px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* Contenedor de búsqueda */
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra el formulario horizontalmente */
+    margin: 20px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilos del formulario de búsqueda */
+.search-form {
+    display: flex;
+    align-items: center; /* Centra verticalmente el input y el botón */
+    width: 280px;
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo del formulario */
+}
+
+/* Estilos del campo de entrada */
+.search-input {
+    flex: 1; /* Toma el máximo espacio disponible */
+    border: none; /* Sin borde en el campo de entrada */
+    padding: 5px; /* Espacio interior */
+    border-radius: 5px 0 0 5px; /* Bordes redondeados solo en el lado izquierdo */
+    font-size: 16px; /* Tamaño del texto */
+    outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+/* Estilos del botón de búsqueda */
+.search-button {
+    background-color: #555; /* Fondo del botón */
+    border: none; /* Sin borde en el botón */
+    color: white; /* Color del texto */
+    padding: 5px 7.5px; /* Espacio interior */
+    border-radius: 0 5px 5px 0; /* Bordes redondeados solo en el lado derecho */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.search-button:hover {
+    background-color: #333; /* Fondo más oscuro al pasar el ratón */
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* Carrito de compras */
+
+
+.carrito-boton {
+    display: inline-block;
+    position: relative;
+    font-size: 22px; /* Aumenta el tamaño del icono */
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s;
+    
+}
+
+.carrito-boton:hover {
+    transform: scale(1.4);
+}
+
+.carrito-numero {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50%; /* Para hacerlo redondo */
+    min-width: 20px; /* Asegura un ancho mínimo */
+    min-height: 20px; /* Asegura un alto mínimo */
+    padding: 2px; /* Añade algo de espacio interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+/* ------------------------------------------------------------------ */
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+}
+
+.error p{
+    font-size: 25px;
+    color: #000000;
+    font-weight: 400;
+}
+
+
+/* ------------------------------------------------------------------ */

@@ -1,0 +1,235 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 20%;
+    margin-top: 15px;
+}
+
+.logo img {
+    transition: all 0.7s;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.logo:hover img{
+    transform: scale(1.1);
+}
+
+.operaciones-de-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 320px;
+}
+
+.operaciones-de-administrador a{
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.menu-horizontal li {
+    position: relative;
+    display: inline-block; /* Esto alinea el elemento del menú principal en una sola fila */
+}
+
+/* Estilo para el enlace principal */
+.menu-horizontal > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Cambia según tu preferencia */
+    background-color: #777; 
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú desplegable (vertical) */
+.menu-vertical {
+    display: none; /* Ocultamos el menú vertical por defecto */
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 100%; /* Posiciona el menú justo debajo del enlace */
+    width: 306px;
+}
+
+.menu-vertical li {
+    width: 100%; /* Aseguramos que los elementos del menú vertical ocupen todo el ancho */
+}
+
+.menu-vertical li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: white; /* Fondo del menú desplegable */
+}
+
+/* Efecto hover para el menú vertical */
+.menu-vertical li a:hover {
+    background-color: #555; /* Cambia el fondo cuando pasas el ratón */
+    color: white;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por el menú principal */
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Efecto hover para el enlace principal */
+.menu-horizontal > li > a:hover {
+    background-color: #555; /* Cambia el fondo al hacer hover en el menú principal */
+}
+
+.registro-inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    gap: 30px;
+}
+
+.registro-inicioSesion a{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.imagen-usuario{
+    position: relative;
+    margin-top: 5px;
+}
+
+.imagen-usuario img{
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    border: 5px solid #333;
+    object-fit: cover; 
+}
+
+.imagen-usuario i{
+    font-size: 25px;
+    background-color: #43c6ac81;
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 5px 7px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+}
+
+.imagen-usuario i:hover p{
+    opacity: 1;
+}
+
+.imagen-usuario p{
+    position: absolute;
+    width: 160px;
+    bottom: 10px;
+    left: 50px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    color: #43c6ac;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.nombre-usuario{
+    position: absolute;
+    display: flex;
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+    gap: 5px;
+    top: 60px;
+    left: 55.5%;
+}
+
+.nombre-email i,
+.nombre-domicilio i,
+.nombre-usuario i{
+    cursor: pointer;
+}
+
+.nombre-email i:hover p,
+.nombre-domicilio i:hover p,
+.nombre-usuario i:hover p{
+    opacity: 1;
+}
+
+.editarEmail,
+.editarDomicilio,
+.editarNombre{
+    color: #43c6ac;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.email,
+.domicilio,
+.nombre{
+    font-size: 16px;
+    font-family: cursive;
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.nombre-domicilio{
+    display: flex;
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+    gap: 5px;
+    margin: 60px 0px 0px 80px;
+}
+
+.nombre-email{
+    display: flex;
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+    gap: 5px;
+    margin: 10px 0px 0px 80px;
+}

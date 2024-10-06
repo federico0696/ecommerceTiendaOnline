@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PROYECTO tienda de ropa online</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="/css/error.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/logo.png}" alt="Logo" />
+                </a>
+            </div>
+            <div class="operaciones-de-administrador">
+                <ul class="menu-horizontal">
+                    <li>
+                        <a>Operaciones de Administrador</a>
+                        <ul class="menu-vertical">
+                            <li><a th:href="@{/admin/agregarProducto}">Agregar un producto</a></li>
+                            <li><a th:href="@{/admin/verProducto}">Ver/Eliminar Productos</a></li>
+                            <li><a th:href="@{/admin/modificarProducto}">Modificar un Producto</a></li>
+                            <li><a th:href="@{/admin/listaUsuarios}">Lista de Usuarios</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-container">
+                <form th:action="@{/buscador/producto}" method="get" class="search-form">
+                    <input type="text" name="nombre" placeholder="Buscar productos..." class="search-input" required>
+                    <button type="submit" class="search-button">🔍</button>
+                </form>
+            </div>
+            <div class="carrito" th:if="${session.usuariosession}">
+                <a th:href="@{/carrito}" role="button" class="carrito-boton">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class="carrito-numero">0</span>
+                </a>
+            </div>
+            <div class="registro-inicioSesion" th:if="${session.usuariosession == null}">
+                <a href="/registrar" role="button">¡Regístrate!</a>
+                <a href="/login" role="button">¡Inicia sesión!</a>
+            </div>
+            <div class="registro-inicioSesion" th:if="${session.usuariosession}">
+                <a href="/logout" role="button">¡Cerrar sesión!</a>
+                <a href="/perfil/perfilUsuario" role="button"><i class="bi bi-person-fill"></i>Perfil</a>
+            </div>
+        </header>
+        
+        <div class="error">
+            <p class="asd" th:text = "'Error '+${codigo}+': '"></p>
+            <p class="asd" th:text = "${mensaje}"></p>
+        </div>
+        
+        
+        <script src="/js/error.js"></script>
+    
+    </body>
+
+</html>

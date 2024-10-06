@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO tienda de ropa online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/carrito.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/img/logo.png}" alt="Logo" />
+            </a>
+        </div>
+        <div class="operaciones-de-administrador" sec:authorize="hasRole('ADMIN')">
+            <ul class="menu-horizontal">
+                <li>
+                    <a>Operaciones de Administrador</a>
+                    <ul class="menu-vertical">
+                        <li><a th:href="@{/admin/agregarProducto}">Agregar un producto</a></li>
+                        <li><a th:href="@{/admin/verProducto}">Ver/Eliminar Productos</a></li>
+                        <li><a th:href="@{/admin/modificarProducto}">Modificar un Producto</a></li>
+                        <li><a th:href="@{/admin/listaUsuarios}">Lista de Usuarios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="carrito" th:if="${session.usuariosession}">
+            <a th:href="@{/carrito}" role="button" class="carrito-boton">
+                <i class="bi bi-cart-fill"></i>
+                <span class="carrito-numero" th:text="${nroProdutosEnCarrito != null && nroProdutosEnCarrito > 0 ? nroProdutosEnCarrito : 0}"></span>
+            </a>
+        </div>
+        <div class="registro-inicioSesion" th:if="${session.usuariosession == null}">
+            <a href="/registrar" role="button">¡Regístrate!</a>
+        </div>
+        <div class="registro-inicioSesion" th:if="${session.usuariosession == null}">
+            <a href="/login" role="button">¡Inicia sesión!</a>
+        </div>
+        <div class="registro-inicioSesion" th:if="${session.usuariosession}">
+            <a href="/logout" role="button">¡Cerrar sesión!</a>
+            <a href="/perfil/perfilUsuario" role="button"><i class="bi bi-person-fill"></i>Perfil</a>
+        </div>
+
+    </header>
+
+    <h2 class="titulo-principal" th:if="${#lists.isEmpty(productos)}"> El carrito está vacío. </h2>
+    <h2 class="titulo-principal" th:if="${!#lists.isEmpty(productos)}">Termina de revisar tu orden ¡ Gracias por elegirnos !</h2>
+    <h2 class="mensaje" th:if="${mensaje}">¡Muchas gracias por tu compra!</h2>
+    <div class="container">
+        <div class="articulo" th:each="producto : ${productos}">
+            <img th:src="${producto.imagen}" alt="Imagen de producto">
+            <h4 th:text="${producto.nombre}">S</h4>
+            <p th:text="'$'+ ${producto.precio}"></p>
+            <div class="input-box">
+                <p>Cantidad</p>
+                <!-- El atributo data-precio tendrá el valor correcto de producto.precio como número -->
+                <input type="number" name="cantidad" min="1" max="99" value="1" th:data-precio="${producto.precio}"
+                    oninput="actualizarSubtotal(this)">
+            </div>
+            <p class="subTotal-producto">Sub Total: $<span class="subtotal" th:text="${producto.precio}"></span></p>
+            <i class="bi bi-trash" th:attr="data-id=${producto.id}" onclick="eliminarProducto(this)"></i>
+
+        </div>
+
+        <div class="total" th:if="${!#lists.isEmpty(productos)}">
+            <h4>Total: $<span id="total">0.00</span></h4>
+            <form th:action="@{/carrito/vaciarCarrito}" method="post">
+                <button type="submit" class="producto-agregar">Comprar</button>
+            </form>
+        </div>
+
+        <div class="seguirComprando">
+            <a th:href="@{/}">Seguir comprando<i class="bi bi-arrow-return-left"></i></a>
+        </div>
+    </div>
+
+
+
+    <script src="/js/carrito.js"></script>
+</body>
+
+</html>

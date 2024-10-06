@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO tienda de ropa online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div class="logo">
+        <a href="/logout">
+            <img th:src="@{/img/logo.png}" alt="Logo" />
+        </a>
+    </div>
+
+    <div class="formulario">
+        <div class="envoltorio">
+            <div th:if="${param.error}" class="mensajeError">
+                <h5>Error!</h5>
+                <p>Credenciales incorrectas, por favor intenta nuevamente.</p>
+            </div>
+            <form th:action="@{/logincheck}" method="post">
+                <h2>Iniciar Sesión</h2>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Ingrese su Email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                </div>
+
+                <button type="submit" class="btn">Iniciar Sesión</button>
+
+                <div class="SiNoTienesCuentaRegistrateAqui">
+                    <a th:href="@{/registrar}">¿No tienes una cuenta? Regístrate aquí.</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="volver">
+        <a href="/logout">Volver<i class="bi bi-arrow-return-left"></i></a>
+    </div>
+
+</body>
+
+</html>

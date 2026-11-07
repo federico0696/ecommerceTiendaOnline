@@ -1,0 +1,18 @@
+# dependencias y build
+node_modules/
+dist/
+coverage/
+
+# logs y temporales
+*.log
+.DS_Store
+/tmp
+/uploads
+
+# IDE
+.idea/
+.vscode/
+
+# NOTA: .env está versionado A PROPÓSITO mientras solo contiene valores ficticios.
+# Cuando se carguen credenciales reales, descomentar la línea siguiente y quitarlo del historial.
+# .env

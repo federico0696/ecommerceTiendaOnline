@@ -1,0 +1,30 @@
+{
+  "_comentario": "ARCHIVO FICTICIO. Reemplazar por el google-services.json real del proyecto Firebase (Consola Firebase > Configuración del proyecto > Tus apps > Android, paquete com.viveroapp). Con este archivo la app compila pero las notificaciones push no llegan.",
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "vivero-app-ficticio",
+    "storage_bucket": "vivero-app-ficticio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "android_client_info": {
+          "package_name": "com.viveroapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyFICTICIA0000000000000000000000000"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
